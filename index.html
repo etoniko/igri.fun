@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Игры по фану</title>
+
+<meta name="description" content="Игры фан бесплатно без скачивания и регистрации. Лучшие браузерные игры на ПК и телефон. Играйте прямо сейчас — экшен, гонки, стратегии, аркады и многое другое.">
+<meta name="keywords" content="фан игры, браузерные игры, игры бесплатно, веб игры, игры без скачивания, играть фан, бесплатные игры, игры на пк, игры на телефон">
+<meta name="author" content="Games Fun">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<link rel="canonical" href="https://igri.fun">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="фан игры бесплатно — браузерные игры без скачивания">
+<meta property="og:description" content="Тысячи бесплатных фан игр без регистрации. Играйте прямо в браузере на ПК и смартфоне.">
+<meta property="og:url" content="https://igri.fun/">
+<meta property="og:site_name" content="igri.fun">
+<meta property="og:image" content="https://igri.fun/photo/preview.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="фан игры бесплатно — браузерные игры">
+<meta name="twitter:description" content="Лучшие бесплатные браузерные игры без скачивания.">
+<meta name="twitter:image" content="https://igri.fun/photo/preview.jpg">
+
+<!-- Favicon -->
+<!-- SVG (современные браузеры) -->
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<!-- PNG (fallback) -->
+<link rel="icon" href="./favicon.png?v=2" type="image/png">
+<!-- ICO (старые браузеры, Windows) -->
+<link rel="icon" href="./favicon.ico?v=2" sizes="any">
+<!-- Для Apple устройств -->
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=3">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link href="./assets/style.css?1" rel="stylesheet">
+
+<!-- JS -->
+<script defer src="./assets/main.js?1"></script>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "igri.fun",
+  "url": "https://igri.fun/",
+  "description": "фан игры бесплатно без скачивания и регистрации. Лучшие браузерные веб-игры для ПК и телефона.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://igri.fun/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+  
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106919427', 'ym');
+
+    ym(106919427, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106919427" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta name="yandex-verification" content="3c9d32367c2b3bfc" />
+</head>
+<body>
+
+<header>
+<button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+<h1>igri.fun</h1>
+<div class="subtitle">Браузерные фан игры</div>
+<div class="counter" id="game-counter"></div>
+</header>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Поиск игры…">
+</div>
+
+<div class="container">
+<div class="games-grid" id="grid"></div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-copy">© 2026 igri.fun</div>
+    </div>
+    <div class="footer-links">
+      <a href="./contact/">Контакты</a>
+      <a href="./privacy/">Политика конфиденциальности</a>
+      <a href="./terms/">Пользовательское соглашение</a>
+      <a href="./offer/">Публичная оферта</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

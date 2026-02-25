@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фан - запуск</title>
+<meta name="description" content="Переход в режим игры.">
+<meta name="keywords" content="фан игры, браузерные игры, игры бесплатно, веб игры, игры без скачивания, играть фан, бесплатные игры, игры на пк, игры на телефон">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Favicon -->
+<!-- SVG (современные браузеры) -->
+<link rel="icon" href="/ico.svg" type="image/svg+xml">
+<!-- PNG (fallback) -->
+<link rel="icon" href="/favicon.png" type="image/png">
+<!-- ICO (старые браузеры, Windows) -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<!-- Для Apple устройств -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+iframe {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: none;
+}
+
+.wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<iframe id="gameFrame"></iframe>
+
+<div id="status" class="wrapper">
+    <div class="loader"></div>
+    <div class="message">Загрузка игры...</div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const url = params.get("url");
+
+const iframe = document.getElementById("gameFrame");
+const status = document.getElementById("status");
+
+function goHome() {
+    window.location.href = "/";
+}
+
+if (!url) {
+    status.querySelector(".message").innerText =
+        "Игра не найдена\nВозврат на главную...";
+    setTimeout(goHome, 3000);
+} else {
+    iframe.src = url;
+
+    iframe.onload = () => {
+        status.style.display = "none";
+        iframe.style.display = "block";
+    };
+
+    iframe.onerror = () => {
+        status.querySelector(".message").innerText =
+            "Ошибка загрузки\nВозврат на главную...";
+        setTimeout(goHome, 3000);
+    };
+
+let loaded = false;
+
+iframe.onload = () => {
+    loaded = true;
+    status.style.display = "none";
+    iframe.style.display = "block";
+};
+
+setTimeout(() => {
+    if (!loaded) {
+        status.querySelector(".message").innerText =
+            "Игра загружается дольше обычного...";
+    }
+}, 5000);
+}
+</script>
+
+</body>
+</html>
